@@ -26,8 +26,6 @@ public class Second extends JFrame{
 		JButton button = new JButton ("ADD");
 		JTextField input = new JTextField ("", 25);
 		Vector<String> items = new Vector<String>();
-		items.addElement("Hello");
-		items.addElement("Bye");
 		//String[] items = {""};
 		JComboBox comboBox = new JComboBox(items);
 		
@@ -49,25 +47,31 @@ public class Second extends JFrame{
 				{
 			public void actionPerformed(ActionEvent event)
 			{
-				String text = input.getText();	
-				
-				for (int index = 0; index < items.size(); index++)
+				//String text = input.getText();	
+				comboBox.addItem(input.getText());
+				/*for (int index = 0; index < items.size(); index++)
 				{
 					if (items.get(index) != text && index == items.size()-1)
 					{
-						comboBox.addItem(text);
+						
 						System.out.println("Add");
 					}
 				}
-				/*for (int index = 0; index < items.size(); index++)
+				for (int index = 0; index < items.size(); index++)
 				{
 					if (items.get(index) == text)
-						{System.out.println("Element exist!!!");}						
+						{
+						System.out.println("Element exist!!!");
+						JDialog dialog = new JDialog (new Second(), "ERROR");
+						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						dialog.setSize(150,100);
+						dialog.getRootPane().setWindowDecorationStyle(JRootPane.INFORMATION_DIALOG);
+						dialog.setVisible(true);}						
 					else if (index == items.size()-1)
-					{System.out.println("Add");*/
+					{System.out.println("Add");
 						
-						//}						
-				//}
+						}						
+				}*/
 				
 			}
 				});		
