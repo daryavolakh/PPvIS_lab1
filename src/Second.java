@@ -1,81 +1,41 @@
 import java.awt.*;
-import java.awt.BorderLayout;
 import java.awt.event.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.ActionListener;
-
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.border.*;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.util.*;
-public class Second extends JFrame{
 
-	public Second()
-	{
-		setTitle("My window");
-		setSize(250,190);	
+public class Second extends JFrame {
+	public Second(){
+		setTitle("Tack 2");
+		setSize(250,190);
 		setLayout(null);
-		setLocationByPlatform(true);  //расположение на экране
+		setLocationByPlatform(true);
 		
-		JButton button = new JButton ("ADD");
-		JTextField input = new JTextField ("", 25);
-		Vector<String> items = new Vector<String>();
-		//String[] items = {""};
-		JComboBox comboBox = new JComboBox(items);
+		JButton button_1 = new JButton("first");
+		JButton button_2 = new JButton("second");
+		JTextField input = new JTextField();
 		
-		comboBox.setEditable(true); //чтобы можно было редактировать
+		input.setBounds(35,40,170,25);
+		add(input);
+		button_1.setBounds(35,75,80,25);
+		add(button_1);
+		button_2.setBounds(125,75,80,25);
+		add(button_2);	
 		
-		comboBox.setBounds(45,40,150,25);
-		add(comboBox);	   //getContentPane(). 
-	    
-	    input.setBounds(45,10,150,25);
-	    add(input); 
-	    
-	    button.setBounds(70,90,100,40);
-		add(button);
-		
-		//public void bAddActionPerformed(java.awt.event.ActionEvent event) {
-			
-		//внутри - исполнитель этого события
-		button.addActionListener(new ActionListener()
-				{
+		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event)
 			{
-				//String text = input.getText();	
-				comboBox.addItem(input.getText());
-				/*for (int index = 0; index < items.size(); index++)
-				{
-					if (items.get(index) != text && index == items.size()-1)
-					{
-						
-						System.out.println("Add");
-					}
-				}
-				for (int index = 0; index < items.size(); index++)
-				{
-					if (items.get(index) == text)
-						{
-						System.out.println("Element exist!!!");
-						JDialog dialog = new JDialog (new Second(), "ERROR");
-						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-						dialog.setSize(150,100);
-						dialog.getRootPane().setWindowDecorationStyle(JRootPane.INFORMATION_DIALOG);
-						dialog.setVisible(true);}						
-					else if (index == items.size()-1)
-					{System.out.println("Add");
-						
-						}						
-				}*/
-				
+				button_2.setText(input.getText());
 			}
-				});		
+		});
+		
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event)
+			{
+				String text = button_1.getText();
+				button_1.setText(button_2.getText());
+				button_2.setText(text);
+			}
+		});
+		
 	}
 }
-
-

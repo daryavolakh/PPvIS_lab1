@@ -7,7 +7,7 @@ public class MainClass
 {
 	public static void main(String args[])
 	{
-		Second frame = new Second();
+		Third frame = new Third();
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //указывает операцию, которая будет произведена при закрытии окна.
 		frame.setVisible(true); //делаем окно видимым
