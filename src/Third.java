@@ -15,7 +15,7 @@ public class Third extends JFrame {
 		JTextField input = new JTextField();
 		JRadioButton radio_1 = new JRadioButton("one");
 		JRadioButton radio_2 = new JRadioButton("two");
-		JRadioButton radio_3 = new JRadioButton("tree");
+		JRadioButton radio_3 = new JRadioButton("three");
 		ButtonGroup b_group = new ButtonGroup();
 		
 		b_group.add(radio_1);

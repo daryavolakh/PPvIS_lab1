@@ -26,17 +26,15 @@ public class First extends JFrame{
 		JButton button = new JButton ("ADD");
 		JTextField input = new JTextField ("", 25);
 		Vector<String> items = new Vector<String>();
-		//String[] items = {""};
 		JComboBox comboBox = new JComboBox(items);		
 		comboBox.setEditable(true); //чтобы можно было редактировать
 		
 		comboBox.setBounds(45,40,150,25);
-		add(comboBox);	   //getContentPane(). 
-	    
 	    input.setBounds(45,10,150,25);
-	    add(input); 
-	    
 	    button.setBounds(70,90,100,40);
+	    
+	    add(comboBox);	
+	    add(input); 
 		add(button);
 		
 		//public void bAddActionPerformed(java.awt.event.ActionEvent event) {

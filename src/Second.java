@@ -14,11 +14,12 @@ public class Second extends JFrame {
 		JButton button_2 = new JButton("second");
 		JTextField input = new JTextField();
 		
-		input.setBounds(35,40,170,25);
-		add(input);
-		button_1.setBounds(35,75,80,25);
-		add(button_1);
+		input.setBounds(35,40,170,25);		
+		button_1.setBounds(35,75,80,25);		
 		button_2.setBounds(125,75,80,25);
+		
+		add(input);
+		add(button_1);
 		add(button_2);	
 		
 		button_1.addActionListener(new ActionListener() {
