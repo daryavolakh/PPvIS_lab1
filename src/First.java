@@ -1,18 +1,18 @@
 import java.awt.*;
+
 import java.awt.BorderLayout;
 import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.ActionListener;
+import java.awt.List;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.border.*;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+
 import java.util.*;
 public class First extends JFrame{
 
@@ -36,43 +36,42 @@ public class First extends JFrame{
 	    add(comboBox);	
 	    add(input); 
 		add(button);
-		
-		//public void bAddActionPerformed(java.awt.event.ActionEvent event) {
-			
-		//внутри - исполнитель этого события
+
 		button.addActionListener(new ActionListener()
 				{
 			public void actionPerformed(ActionEvent event)
 			{
 				//String text = input.getText();	
-				comboBox.addItem(input.getText());
-				/*for (int index = 0; index < items.size(); index++)
+				
+			
+				int itemsCount=comboBox.getModel().getSize();
+
+				for (int index = 0; index < itemsCount; index++)
 				{
-					if (items.get(index) != text && index == items.size()-1)
-					{
-						
-						System.out.println("Add");
-					}
-				}
-				for (int index = 0; index < items.size(); index++)
-				{
-					if (items.get(index) == text)
-						{
-						System.out.println("Element exist!!!");
+					Object itemValue=comboBox.getItemAt(index);
+					
+					if (itemValue.toString() == input.getText())
+						{						
+						JOptionPane.showMessageDialog(null, "This item doesn't exist");
+						System.out.println("ERROR");
+						}
+						/*System.out.println("Element exist!!!");
 						JDialog dialog = new JDialog (new Second(), "ERROR");
 						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 						dialog.setSize(150,100);
 						dialog.getRootPane().setWindowDecorationStyle(JRootPane.INFORMATION_DIALOG);
-						dialog.setVisible(true);}						
+						dialog.setVisible(true);*/						
 					else if (index == items.size()-1)
-					{System.out.println("Add");
-						
-						}						
-				}*/
+					{
+						comboBox.addItem(input.getText());
+						System.out.println("Add");						
+					}						
+				}
 				
 			}
 				});		
 	}
+	
 }
 
 

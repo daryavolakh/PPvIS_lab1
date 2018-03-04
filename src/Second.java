@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Second extends JFrame {
 	public Second(){
+		//JFrame f = new JFrame();
 		setTitle("Tack 2");
 		setSize(250,190);
 		setLayout(null);
@@ -26,6 +27,7 @@ public class Second extends JFrame {
 			public void actionPerformed(ActionEvent event)
 			{
 				button_2.setText(input.getText());
+				input.setText(null);
 			}
 		});
 		
@@ -35,6 +37,7 @@ public class Second extends JFrame {
 				String text = button_1.getText();
 				button_1.setText(button_2.getText());
 				button_2.setText(text);
+				input.setText(null);
 			}
 		});
 		
