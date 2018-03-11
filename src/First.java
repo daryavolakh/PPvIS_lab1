@@ -21,13 +21,13 @@ public class First extends JFrame{
 		setTitle("Task 1");
 		setSize(250,190);	
 		setLayout(null);
-		setLocationByPlatform(true);  //расположение на экране
+		setLocationByPlatform(true); 
 		
 		JButton button = new JButton ("ADD");
 		JTextField input = new JTextField ("", 25);
 		Vector<String> items = new Vector<String>();
 		JComboBox comboBox = new JComboBox(items);		
-		comboBox.setEditable(true); //чтобы можно было редактировать
+		comboBox.setEditable(true); 
 		
 		comboBox.setBounds(45,40,150,25);
 	    input.setBounds(45,10,150,25);
@@ -41,33 +41,33 @@ public class First extends JFrame{
 				{
 			public void actionPerformed(ActionEvent event)
 			{
-				//String text = input.getText();	
-				
-			
-				int itemsCount=comboBox.getModel().getSize();
-
-				for (int index = 0; index < itemsCount; index++)
+				boolean value = false;
+				if (items.size() == 0)
 				{
-					Object itemValue=comboBox.getItemAt(index);
-					
-					if (itemValue.toString() == input.getText())
-						{						
-						JOptionPane.showMessageDialog(null, "This item doesn't exist");
-						System.out.println("ERROR");
-						}
-						/*System.out.println("Element exist!!!");
-						JDialog dialog = new JDialog (new Second(), "ERROR");
-						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-						dialog.setSize(150,100);
-						dialog.getRootPane().setWindowDecorationStyle(JRootPane.INFORMATION_DIALOG);
-						dialog.setVisible(true);*/						
-					else if (index == items.size()-1)
-					{
-						comboBox.addItem(input.getText());
-						System.out.println("Add");						
-					}						
+					value = false;
+					System.out.println("EMPTY");
 				}
-				
+				else {
+					for (int index = 0; index < items.size(); index = index + 1)
+					{											
+						if (!input.getText().equals(items.get(index)) & index ==  items.size() - 1)
+							{				
+									value = false;
+									System.out.println("Add");	
+									break;
+							}
+						else if (input.getText().equals(items.get(index)))
+						{
+							value = true;
+							System.out.println("ERROR");
+							break;
+						}					
+					}				
+				}
+				if (value == false)
+					comboBox.addItem(input.getText());
+				if (value == true)
+					JOptionPane.showMessageDialog(null, "This item exist");					
 			}
 				});		
 	}

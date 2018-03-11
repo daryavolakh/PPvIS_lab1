@@ -2,7 +2,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
-public class Fifth extends JFrame{
+
+import javax.swing.table.DefaultTableModel;
+public class Fifth extends JFrame {
 	public Fifth()
 	{
 		//JFrame frame = new JFrame();
@@ -15,8 +17,8 @@ public class Fifth extends JFrame{
 		setLocationByPlatform(true);
 		setSize(250,350);
 		
-		String columns[] = {"first", "second"};
-		String rows[][] = {};
+		/*String columns[] = {"first", "second"};
+		String rows[][] = {};*/
 		
 		
 		JButton mainButton = new JButton("button");
@@ -31,7 +33,15 @@ public class Fifth extends JFrame{
 		button3.setBounds(158,70,45,20);
 		mainButton.setBounds(85,100,70,25);
 		
-		JTable table = new JTable(rows,columns);
+		DefaultTableModel model = new DefaultTableModel();
+		JTable table = new JTable(model);
+		//AbstractTableModel dtm = (AbstractTableModel)table.getModel();
+		//DefaultTableModel dtm = (DefaultTableModel)table.getModel();
+		
+		model.addColumn("1");
+		model.addColumn("2");
+		
+		//JTable table = new JTable(rows,columns);
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(35,135,170,100);
 
@@ -41,7 +51,7 @@ public class Fifth extends JFrame{
 		add(button2);
 		add(button3);
 		getContentPane().add(scrollPane);
-		//add(table);
+		//add(model);
 		
 		mainButton.addActionListener(new ActionListener()
 				{
