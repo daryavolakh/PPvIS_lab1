@@ -14,14 +14,16 @@ import javax.swing.event.ChangeListener;
 import javax.swing.border.*;
 
 import java.util.*;
-public class First extends JFrame{
+public class First {
 
 	public First()
 	{
-		setTitle("Task 1");
-		setSize(250,190);	
-		setLayout(null);
-		setLocationByPlatform(true); 
+		JFrame frame = new JFrame();
+		
+		frame.setTitle("Task 1");
+		frame.setSize(250,190);	
+		frame.setLayout(null);
+		frame.setLocationByPlatform(true); 
 		
 		JButton button = new JButton ("ADD");
 		JTextField input = new JTextField ("", 25);
@@ -33,43 +35,41 @@ public class First extends JFrame{
 	    input.setBounds(45,10,150,25);
 	    button.setBounds(70,90,100,40);
 	    
-	    add(comboBox);	
-	    add(input); 
-		add(button);
+	    frame.add(comboBox);	
+	    frame.add(input); 
+	    frame.add(button);
 
 		button.addActionListener(new ActionListener()
 				{
 			public void actionPerformed(ActionEvent event)
 			{
-				boolean value = false;
+				boolean itemExist = false;
 				if (items.size() == 0)
-				{
-					value = false;
-					System.out.println("EMPTY");
-				}
+					itemExist = false;
 				else {
 					for (int index = 0; index < items.size(); index = index + 1)
 					{											
 						if (!input.getText().equals(items.get(index)) & index ==  items.size() - 1)
 							{				
-									value = false;
-									System.out.println("Add");	
+							itemExist = false;
 									break;
 							}
 						else if (input.getText().equals(items.get(index)))
 						{
-							value = true;
-							System.out.println("ERROR");
+							itemExist = true;
 							break;
 						}					
 					}				
 				}
-				if (value == false)
+				if (itemExist == false)
 					comboBox.addItem(input.getText());
-				if (value == true)
-					JOptionPane.showMessageDialog(null, "This item exist");					
+				if (itemExist == true)
+					JOptionPane.showMessageDialog(null, "This item exist");		
+				input.setText(null);
 			}
-				});		
+				});	
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		frame.setVisible(true);
 	}
 	
 }

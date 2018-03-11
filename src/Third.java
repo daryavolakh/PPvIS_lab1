@@ -3,18 +3,15 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class Third extends JFrame{
+public class Third {
 	public Third()
 	{
-		//JFrame frame = new JFrame();
-		
-		/*setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		setVisible(true); */
-		
-		setTitle("Task 3");
-		setLayout(null);
-		setLocationByPlatform(true);
-		setSize(250,190);
+		JFrame frame = new JFrame();
+
+		frame.setTitle("Task 3");
+		frame.setLayout(null);
+		frame.setLocationByPlatform(true);
+		frame.setSize(250,190);
 		
 		JButton button = new JButton("start");
 		JTextField input = new JTextField();
@@ -33,11 +30,11 @@ public class Third extends JFrame{
 		radio3.setBounds(155,70,50,20);
 		button.setBounds(85,95,70,25);		
 		
-		add(input);
-		add(button);
-		add(radio1);
-		add(radio2);
-		add(radio3);
+		frame.add(input);
+		frame.add(button);
+		frame.add(radio1);
+		frame.add(radio2);
+		frame.add(radio3);
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event)
@@ -45,35 +42,22 @@ public class Third extends JFrame{
 				if (radio1.getText().equals(input.getText()))
 					radio1.setSelected(true);
 			
-			else if (radio2.getText().equals(input.getText()))
-				radio2.setSelected(true);
-			
-			else if (radio3.getText().equals(input.getText()))
-				radio3.setSelected(true);
+				else if (radio2.getText().equals(input.getText()))
+					radio2.setSelected(true);
 				
-			else 
-			{
-				JOptionPane.showMessageDialog(null, "This item doesn't exist");
-				System.out.println("ERROR");
-			}
-				
-				//while (buttons.hasMoreElements())
-				/*for (Enumeration<AbstractButton> buttons = bgroup.getElements(); buttons.hasMoreElements();)
+				else if (radio3.getText().equals(input.getText()))
+					radio3.setSelected(true);
+					
+				else 
 				{
-					AbstractButton temp_button = buttons.nextElement();
-					if (temp_button.getText().equals(input.getText()))
-					{	
-						temp_button.setSelected(true);
-					}
-					else //if (!temp_button.getText().equals(input.getText()))
-					{
-						JOptionPane.showMessageDialog(null, "This item doesn't exist");
-						System.out.println("ERROR");
-					}
-				}*/
-				input.setText(null);				
+					JOptionPane.showMessageDialog(null, "This item doesn't exist");
+					System.out.println("ERROR");
+				}
+					input.setText(null);				
 			}
 		});
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		frame.setVisible(true);
 		
 	}
 }

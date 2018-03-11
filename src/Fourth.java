@@ -3,18 +3,15 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class Fourth extends JFrame {
+public class Fourth {
 	public Fourth() 
 	{
-		//JFrame frame = new JFrame();
+		JFrame frame = new JFrame();
 		
-		/*setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		setVisible(true); */
-		
-		setTitle("Task 4");
-		setLayout(null);
-		setLocationByPlatform(true);
-		setSize(250,190);
+		frame.setTitle("Task 4");
+		frame.setLayout(null);
+		frame.setLocationByPlatform(true);
+		frame.setSize(250,190);
 		
 		JButton button = new JButton("go!");
 		JTextField input = new JTextField();
@@ -28,11 +25,11 @@ public class Fourth extends JFrame {
 		checkbox3.setBounds(155,70,50,20);
 		button.setBounds(85,95,70,25);
 		
-		add(button);
-		add(input);
-		add(checkbox1);
-		add(checkbox2);
-		add(checkbox3);
+		frame.add(button);
+		frame.add(input);
+		frame.add(checkbox1);
+		frame.add(checkbox2);
+		frame.add(checkbox3);
 		
 		button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event)
@@ -64,10 +61,11 @@ public class Fourth extends JFrame {
 				else 
 				{
 					JOptionPane.showMessageDialog(null, "This item doesn't exist");
-					System.out.println("ERROR");
 				}
 				input.setText(null);
 			}
 		});
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		frame.setVisible(true);
 	}
 }
