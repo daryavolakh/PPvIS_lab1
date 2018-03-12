@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class Second  {
+public class Second {
 	public Second(){
 		JFrame frame = new JFrame();
 		frame.setTitle("Tack 2");
@@ -40,7 +40,7 @@ public class Second  {
 				input.setText(null);
 			}
 		});
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 		frame.setVisible(true);
 		
 	}

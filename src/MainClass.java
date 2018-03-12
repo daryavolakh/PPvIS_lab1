@@ -1,12 +1,13 @@
-import java.awt.*; //использу€ * подключаем все компоненты данной бибилиотеки
+import java.awt.*; 
 import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.JTabbedPane;
 
 
 public class MainClass
-{
+{	
 	public static void main(String args[])
-	{
+	{		
 		First frame1 = new First();
 		Second frame2 = new Second();
 		Third frame3 = new Third();
@@ -14,4 +15,4 @@ public class MainClass
 		Fifth frame5 = new Fifth();
 	}
 }
-
+//управл€ющее окно, по€вл€ютс€ по очереди

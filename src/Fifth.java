@@ -47,8 +47,13 @@ public class Fifth{
 					public void actionPerformed(ActionEvent event)
 					{
 						Vector<String> curRow = new Vector<String>();
-						curRow.add(input.getText());
-						model.addRow(curRow);
+						if (input.getText().equals(""))
+							JOptionPane.showMessageDialog(null, "Empty line!");	
+						else 
+						{
+							curRow.add(input.getText());
+							model.addRow(curRow);
+						}
 						input.setText(null);
 						
 					}
@@ -61,8 +66,16 @@ public class Fifth{
 				int[] selectedRow = table.getSelectedRows();  
 				selectedRow[0] = table.convertRowIndexToModel(selectedRow[0]);
 				Object value = model.getValueAt(selectedRow[0], 0);
-				model.setValueAt("",selectedRow[0],0);
-				model.setValueAt(value,selectedRow[0],1);
+				if (value.equals(""))
+				{
+					Object value2 = model.getValueAt(selectedRow[0], 1);
+					model.setValueAt(value2,selectedRow[0],1);
+				}
+				else
+				{
+					model.setValueAt("",selectedRow[0],0);
+					model.setValueAt(value,selectedRow[0],1);
+				}
 			}
 		});
 		
@@ -73,8 +86,16 @@ public class Fifth{
 				int[] selectedRow = table.getSelectedRows();  
 				selectedRow[0] = table.convertRowIndexToModel(selectedRow[0]);
 				Object value = model.getValueAt(selectedRow[0], 1);
-				model.setValueAt("",selectedRow[0],1);
-				model.setValueAt(value,selectedRow[0],0);
+				if (value.equals(""))
+				{
+					Object value2 = model.getValueAt(selectedRow[0], 0);
+					model.setValueAt(value2,selectedRow[0],0);
+				}
+				else
+				{
+					model.setValueAt("",selectedRow[0],1);
+					model.setValueAt(value,selectedRow[0],0);
+				}
 			}
 		});
 		
