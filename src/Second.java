@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.util.*;
 
 public class Second {
+	public JFrame frame = new JFrame();
 	public Second(){
-		JFrame frame = new JFrame();
 		frame.setTitle("Tack 2");
 		frame.setSize(250,190);
 		frame.setLayout(null);
@@ -41,7 +41,11 @@ public class Second {
 			}
 		});
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
-		frame.setVisible(true);
-		
+		frame.setVisible(true);		
+	}
+	
+	void Close()
+	{
+		frame.dispose();
 	}
 }

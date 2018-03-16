@@ -4,10 +4,9 @@ import javax.swing.*;
 import java.util.*;
 
 public class Third {
+	public JFrame frame = new JFrame();
 	public Third()
 	{
-		JFrame frame = new JFrame();
-
 		frame.setTitle("Task 3");
 		frame.setLayout(null);
 		frame.setLocationByPlatform(true);
@@ -57,7 +56,11 @@ public class Third {
 			}
 		});
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
-		frame.setVisible(true);
-		
+		frame.setVisible(true);		
+	}
+	
+	void Close()
+	{
+		frame.dispose();
 	}
 }

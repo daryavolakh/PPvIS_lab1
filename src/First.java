@@ -15,10 +15,10 @@ import javax.swing.border.*;
 
 import java.util.*;
 public class First {
-
+public JFrame frame = new JFrame();
 	public First()
 	{
-		JFrame frame = new JFrame();
+		//JFrame frame = new JFrame();
 		
 		frame.setTitle("Task 1");
 		frame.setSize(250,190);	
@@ -71,6 +71,12 @@ public class First {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 		frame.setVisible(true);
 	}
+	
+	void Close()
+	{
+		frame.dispose();
+	}
+
 	
 }
 

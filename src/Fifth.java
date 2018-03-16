@@ -5,10 +5,9 @@ import java.util.*;
 import javax.swing.table.DefaultTableModel;
 
 public class Fifth{
+	public JFrame frame = new JFrame();
 	public Fifth()
-	{
-		JFrame frame = new JFrame();
-		
+	{		
 		frame.setTitle("Task 5");
 		frame.setLayout(null);
 		frame.setLocationByPlatform(true);
@@ -18,15 +17,15 @@ public class Fifth{
 		columns.add("1");
 		columns.add("2");
 		
-		JButton button1 = new JButton("1");
-		JButton button2 = new JButton("2");
-		JButton button3 = new JButton("3");
+		JButton button1 = new JButton("add");
+		JButton button2 = new JButton("- >");
+		JButton button3 = new JButton("< -");
 		JTextField input = new JTextField();		
 		
 		input.setBounds(35,40,170,25);	
-		button1.setBounds(35,75,45,25);		
-		button2.setBounds(98,75,45,25);		
-		button3.setBounds(158,75,45,25);
+		button1.setBounds(80,70,80,25);		
+		button2.setBounds(35,100,80,25);		
+		button3.setBounds(125,100,80,25);
 		
 		DefaultTableModel model = new DefaultTableModel(columns, 0);
 		
@@ -99,7 +98,12 @@ public class Fifth{
 			}
 		});
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 		frame.setVisible(true);
+	}
+	
+	void Close()
+	{
+		frame.dispose();
 	}
 }
