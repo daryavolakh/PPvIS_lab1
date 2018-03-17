@@ -68,7 +68,7 @@ public class Fourth {
 		frame.setVisible(true);
 	}
 	
-	void Close()
+	public void Close()
 	{
 		frame.dispose();
 	}

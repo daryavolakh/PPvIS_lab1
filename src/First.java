@@ -18,8 +18,6 @@ public class First {
 public JFrame frame = new JFrame();
 	public First()
 	{
-		//JFrame frame = new JFrame();
-		
 		frame.setTitle("Task 1");
 		frame.setSize(250,190);	
 		frame.setLayout(null);
@@ -51,8 +49,8 @@ public JFrame frame = new JFrame();
 					{											
 						if (!input.getText().equals(items.get(index)) & index ==  items.size() - 1)
 							{				
-							itemExist = false;
-									break;
+								itemExist = false;
+								break;
 							}
 						else if (input.getText().equals(items.get(index)))
 						{
@@ -72,12 +70,10 @@ public JFrame frame = new JFrame();
 		frame.setVisible(true);
 	}
 	
-	void Close()
+	public void Close()
 	{
 		frame.dispose();
-	}
-
-	
+	}	
 }
 
 

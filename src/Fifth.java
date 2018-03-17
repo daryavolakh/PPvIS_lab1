@@ -102,7 +102,7 @@ public class Fifth{
 		frame.setVisible(true);
 	}
 	
-	void Close()
+	public void Close()
 	{
 		frame.dispose();
 	}

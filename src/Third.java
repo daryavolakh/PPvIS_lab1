@@ -59,7 +59,7 @@ public class Third {
 		frame.setVisible(true);		
 	}
 	
-	void Close()
+	public void Close()
 	{
 		frame.dispose();
 	}

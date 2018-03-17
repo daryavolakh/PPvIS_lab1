@@ -13,11 +13,12 @@ public class MainClass
 	{	
 		JFrame mainframe = new JFrame();
 		mainframe.setTitle("Task");
-		mainframe.setSize(265,150);	
+		mainframe.setSize(265,180);	
 		mainframe.setLayout(null);
 		mainframe.setLocationByPlatform(true); 
 		
-		JButton button = new JButton ("START");
+		JButton buttonStart = new JButton ("START");
+		JButton buttonStop = new JButton ("STOP");
 		JRadioButton radio1 = new JRadioButton("1");
 		JRadioButton radio2 = new JRadioButton("2");
 		JRadioButton radio3 = new JRadioButton("3");
@@ -36,14 +37,16 @@ public class MainClass
 		radio3.setBounds(110,25,40,20);
 		radio4.setBounds(160,25,40,20);		
 		radio5.setBounds(210,25,40,20);
-		button.setBounds(80,70,80,25);
+		buttonStart.setBounds(80,65,80,25);
+		buttonStop.setBounds(80,95,80,25);
 		
 		mainframe.add(radio1);
 		mainframe.add(radio2);
 		mainframe.add(radio3);
 		mainframe.add(radio4);
 		mainframe.add(radio5);
-		mainframe.add(button);
+		mainframe.add(buttonStart);
+		mainframe.add(buttonStop);
 		
 		radio1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event)
@@ -80,12 +83,21 @@ public class MainClass
 			}
 		});	
 		
-		button.addActionListener(new ActionListener() {
+		DopTask doptask = new DopTask();
+		buttonStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event)
 			{
-				DopTask doptask = new DopTask();
+				
+				doptask.StartTimer();
 			}
 		});	
+		
+		buttonStop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event)
+			{
+				doptask.StopTimer();
+			}
+		});
 		
 	mainframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 	mainframe.setVisible(true);
