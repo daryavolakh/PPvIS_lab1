@@ -8,15 +8,13 @@ import javax.swing.Timer;
 public class MyTask extends TimerTask {
 
 	    public void run() {	
-	    	 boolean desition = true;
-	    	 if (desition==true)
-	    	 {
+
 		    	 First frame1 = new First();
 			     try {
 			         Thread.sleep(1000); 
 			         frame1.Close();
 			       } catch (Exception ex) {}
-	    	 }
+	    	 
 	    	 
 		     Second frame2 = new Second();
 		     try {

@@ -84,6 +84,7 @@ public class MainClass
 		});	
 		
 		DopTask doptask = new DopTask();
+		MyTask task = new MyTask();
 		buttonStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event)
 			{
